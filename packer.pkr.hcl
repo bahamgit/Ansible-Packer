@@ -40,15 +40,23 @@ source "vsphere-iso" "vm-packer" {
   iso_url      = "https://releases.ubuntu.com/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
   
   
-  # VM Cloud-Init Settings
-  cloud_init              = true
-  cloud_init_storage_pool = "{{ local }}"
+#  # VM Cloud-Init Settings
+#  cloud_init              = true
+#  cloud_init_storage_pool = "{{ local }}"
 
 #  # Pour la connexion ssh
 #  ssh_host = "192.168.220.101"
 #  ssh_username = "amad"
 #  ssh_password = "sdfgh"
 }
+
+  # PACKER Boot Commands
+boot_command = [
+    "<tab><wait>",
+    " ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos6-ks.cfg<enter>"
+ ]
+
+
 
 # Build Definition to create the VM Template
 build {
