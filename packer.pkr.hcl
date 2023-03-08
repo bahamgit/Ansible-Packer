@@ -40,7 +40,7 @@ source "vsphere-iso" "vm-packer" {
   iso_url      = "https://releases.ubuntu.com/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
   
   # Pour la connexion ssh
-  ssh_host = "192.168.220.103"
+  ssh_host = "192.168.220.101"
   ssh_username = "amad"
   ssh_password = "sdfgh"
 }
