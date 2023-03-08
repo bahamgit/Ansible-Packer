@@ -31,7 +31,7 @@ source "vsphere-iso" "vm-packer" {
  # Hard disk settings 
   disk_controller_type = ["pvscsi"]
   storage {
-    disk_size = 15000
+    disk_size = 40000
     disk_controller_index = 0
 }
 
@@ -42,7 +42,7 @@ source "vsphere-iso" "vm-packer" {
   # Pour la connexion ssh
   ssh_host = "192.168.220.103"
   ssh_username = "amad"
-  ssh_password = "amad"
+  ssh_password = "sdfgh"
 }
 
 # Build Definition to create the VM Template
