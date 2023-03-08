@@ -1,38 +1,39 @@
 # Resource Definiation for the VM Template
 source "vsphere-iso" "vm-packer" {
-  # Partie pour s'identifier
+  # vCenter connection settings 
   vcenter_server      = "192.168.220.102"
   username            = "administrator@vsphere.palladu38.me"
   password            = "Sdfgh123$"
   insecure_connection = true
 
-  # Enveloppe de la VM
+  # VM general settings 
   vm_name = "Amad - Auto-Inst-Ubu"
   # folder  = "Temp"
   # cluster = ""
   host      = "37.187.132.7"
   datastore = "STORAGE_Amad"
-  # set_host_for_datastore_uploads = ""
 
-  # Hardware configuration
+  # CPU settings
   CPUs         = "1"
   # cpu_cores    = "2"
+  
+  # Memory settings
   CPU_hot_plug = true
   RAM          = "4096"
   RAM_hot_plug = true
   
-  # Netwotf configuration
+  # Network settings
   network_adapters {
-      network = "Amad - DMZ"
-      network_card = "vmxnet3"
+    network = "Amad - DMZ"
+    network_card = "vmxnet3"
   }
-  # Creation disk
+  
+ # Hard disk settings 
   disk_controller_type = ["pvscsi"]
   storage {
     disk_size = 15000
     disk_controller_index = 0
 }
-
 
   # ISO configuration
   iso_checksum = "5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
