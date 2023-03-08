@@ -39,10 +39,15 @@ source "vsphere-iso" "vm-packer" {
   iso_checksum = "5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
   iso_url      = "https://releases.ubuntu.com/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
   
-  # Pour la connexion ssh
-  ssh_host = "192.168.220.101"
-  ssh_username = "amad"
-  ssh_password = "sdfgh"
+  
+  # VM Cloud-Init Settings
+  cloud_init              = true
+  cloud_init_storage_pool = "{{ local }}"
+
+#  # Pour la connexion ssh
+#  ssh_host = "192.168.220.101"
+#  ssh_username = "amad"
+#  ssh_password = "sdfgh"
 }
 
 # Build Definition to create the VM Template
