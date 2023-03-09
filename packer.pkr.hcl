@@ -68,10 +68,10 @@ build {
   name    = "vm creation"
   sources = ["source.vsphere-iso.vm-packer"]
 
-  provisioner "file" {
-    source      = "user-data.j2"    # fichier de configuration cloud-init
-    destination = "/tmp/user-data.j2"
-  }
+#   provisioner "file" {
+#     source      = "user-data.j2"    # fichier de configuration cloud-init
+#     destination = "/tmp/user-data.j2"
+#   }
 
 
 }
