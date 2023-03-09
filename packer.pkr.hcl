@@ -47,7 +47,7 @@ source "vsphere-iso" "vm-packer" {
  
   boot_command = [
     "<wait>c",
-    "linux /casper/vmlinuz quiet ip={{ ipPKR }}::{{ gwPKR }}:{{ maskPKR }}::::{{ dnsPKR }}  autoinstall ds=nocloud-net\\;s=http://10.0.0.75/ ---<wait>",
+    "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/ ---<wait>",
     "<enter><wait10s>",
     "initrd /casper/initrd",
     "<enter><wait15s>",
