@@ -47,7 +47,7 @@ source "vsphere-iso" "vm-packer" {
  
   boot_command = [
     "<wait>c",
-    "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/ ---<wait>",
+    "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/user-data.j2 ---<wait>",
     "<enter><wait10s>",
     "initrd /casper/initrd",
     "<enter><wait15s>",
@@ -55,7 +55,7 @@ source "vsphere-iso" "vm-packer" {
   ]
 
   # Pour la connexion ssh
-  ssh_host = "192.168.220.101"
+  ssh_host = "192.168.220.20"
   ssh_username = "amad"
   ssh_password = "sdfgh"
 }
