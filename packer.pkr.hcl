@@ -45,14 +45,34 @@ source "vsphere-iso" "vm-packer" {
 #  cloud_init              = true
 #  cloud_init_storage_pool = "{{ local }}"
  
-  boot_command = [
-    "<wait>c",
-    "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/user-data.j2 ---<wait>",
-    "<enter><wait10s>",
-    "initrd /casper/initrd",
-    "<enter><wait15s>",
-    "<wait>boot<wait><enter>"
-  ]
+boot_command = [
+  # Appuyer sur la touche "Entrée" pour commencer le processus de démarrage
+  "<enter><wait>",
+  # Spécifier l'adresse IP, le masque de sous-réseau, la passerelle et le DNS à utiliser pour la machine virtuelle
+  "ip=192.168.220.20",
+  "netmask=255.255.255.0",
+  "gateway=192.168.220.1",
+  "dns=192.168.220.2",
+  # Spécifier le noyau Linux à utiliser pour l'installation
+  "/install/vmlinuz",
+  # Désactiver le support pour l'APIC (Advanced Programmable Interrupt Controller)
+  "noapic",
+  # Spécifier l'URL du fichier user-data contenant les informations de configuration
+  "ds=nocloud-net;s=http://192.168.220.7/",
+  # Activer l'installation automatique
+  "auto=true",
+  # Spécifier la priorité de l'installation
+  "priority=critical",
+  # Configurer la langue par défaut en anglais
+  "debian-installer/locale=en_US",
+  # Désactiver la détection automatique de la configuration de la console
+  "console-setup/ask_detect=false",
+  # Configurer la disposition du clavier pour un clavier français (azerty)
+  "keyboard-configuration/xkb-keymap=fr",
+  "console-keymaps-at/keymap=fr",
+  # Appuyer sur la touche "Entrée" pour lancer l'installation
+  "<enter><wait>"
+]
 
   # Pour la connexion ssh
   ssh_host = "192.168.220.20"
