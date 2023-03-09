@@ -45,14 +45,14 @@ source "vsphere-iso" "vm-packer" {
 #  cloud_init              = true
 #  cloud_init_storage_pool = "{{ local }}"
  
-#  boot_command = [
-#    "<wait>c",
-#    "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/ ---<wait>",
-#    "<enter><wait10s>",
-#    "initrd /casper/initrd",
-#    "<enter><wait15s>",
-#    "<wait>boot<wait><enter>"
-#  ]
+  boot_command = [
+    "<wait>c",
+    "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/ ---<wait>",
+    "<enter><wait10s>",
+    "initrd /casper/initrd",
+    "<enter><wait15s>",
+    "<wait>boot<wait><enter>"
+  ]
 
   # Pour la connexion ssh
   ssh_host = "192.168.220.101"
