@@ -54,10 +54,10 @@ source "vsphere-iso" "vm-packer" {
 #    "<wait>boot<wait><enter>"
 #  ]
 
-#  # Pour la connexion ssh
-#  ssh_host = "192.168.220.101"
-#  ssh_username = "amad"
-#  ssh_password = "sdfgh"
+  # Pour la connexion ssh
+  ssh_host = "192.168.220.101"
+  ssh_username = "amad"
+  ssh_password = "sdfgh"
 }
 
   # PACKER Boot Commands
