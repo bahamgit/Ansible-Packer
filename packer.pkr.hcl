@@ -51,10 +51,7 @@ source "vsphere-iso" "vm-packer" {
 }
 
   # PACKER Boot Commands
-boot_command = [
-    "<tab><wait>",
-    " ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos6-ks.cfg<enter>"
- ]
+
 
 
 
