@@ -33,7 +33,7 @@ source "vsphere-iso" "vm-packer" {
   storage {
     disk_size = 40000
     disk_controller_index = 0
-}
+  }
 
   # ISO configuration
   iso_checksum = "5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
@@ -41,8 +41,10 @@ source "vsphere-iso" "vm-packer" {
   
   
 #  # VM Cloud-Init Settings
+  user_data_file = user_data.j2
 #  cloud_init              = true
 #  cloud_init_storage_pool = "{{ local }}"
+ 
 
 #  # Pour la connexion ssh
 #  ssh_host = "192.168.220.101"
@@ -51,9 +53,6 @@ source "vsphere-iso" "vm-packer" {
 }
 
   # PACKER Boot Commands
-
-
-
 
 # Build Definition to create the VM Template
 build {
