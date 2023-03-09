@@ -41,7 +41,7 @@ source "vsphere-iso" "vm-packer" {
   
   
 #  # VM Cloud-Init Settings
-  user_data_file = user_data.j2
+  user_data_file = "user_data.j2"
 #  cloud_init              = true
 #  cloud_init_storage_pool = "{{ local }}"
  
