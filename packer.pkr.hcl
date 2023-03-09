@@ -45,11 +45,14 @@ source "vsphere-iso" "vm-packer" {
 #  cloud_init              = true
 #  cloud_init_storage_pool = "{{ local }}"
  
-#boot_command = [
-#    "<enter><wait>",
-#    "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ubuntu-22.04.seed auto=true priority=critical debian-installer/locale=en_US console-setup/ask_detect=false keyboard-configuration/xkb-keymap=fr console-keymaps-at/keymap=fr <enter><wait>"
-#  ]
-
+  boot_command = [
+    "<wait>c",
+    "linux /casper/vmlinuz quiet ip={{ ipPKR }}::{{ gwPKR }}:{{ maskPKR }}::::{{ dnsPKR }}  autoinstall ds=nocloud-net\\;s=http://10.0.0.75/ ---<wait>",
+    "<enter><wait10s>",
+    "initrd /casper/initrd",
+    "<enter><wait15s>",
+    "<wait>boot<wait><enter>"
+  ]
 
 #  # Pour la connexion ssh
 #  ssh_host = "192.168.220.101"
