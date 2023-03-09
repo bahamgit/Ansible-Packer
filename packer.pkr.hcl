@@ -45,10 +45,10 @@ source "vsphere-iso" "vm-packer" {
 #  cloud_init              = true
 #  cloud_init_storage_pool = "{{ local }}"
  
-boot_command = [
-    "<enter><wait>",
-    "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ubuntu-22.04.seed auto=true priority=critical debian-installer/locale=en_US console-setup/ask_detect=false keyboard-configuration/xkb-keymap=fr console-keymaps-at/keymap=fr <enter><wait>"
-  ]
+#boot_command = [
+#    "<enter><wait>",
+#    "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ubuntu-22.04.seed auto=true priority=critical debian-installer/locale=en_US console-setup/ask_detect=false keyboard-configuration/xkb-keymap=fr console-keymaps-at/keymap=fr <enter><wait>"
+#  ]
 
 
 #  # Pour la connexion ssh
