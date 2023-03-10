@@ -17,10 +17,10 @@ autoinstall:
   drivers:
     install: false
   identity:
-    password: {{ mdpCryptPKR }}
-    realname: admin
-    username: {{ userPKR }}
-    hostname: {{ hostnamePKR }}
+    password: $6$AJ6p1zfXviFIf9Xw$./k6mGcF928sJe0S9vwKvYfqubv/Ri7kfRcb0fV0oCF3/wYJV797MZiZxY6x74pLrwlmPCs58kiasnLluGOm/1
+    realname: Amadou BAH
+    username: amad
+    hostname: ubuntu-auto-inst 
   kernel:
     package: linux-generic
   keyboard:
@@ -201,8 +201,8 @@ autoinstall:
   user-data: # Commands here run during first boot (cannot be interactive)
     runcmd:
       - |
-        cat > "/etc/sudoers.d/{{ userPKR }}" << EOF
-        {{ userPKR }} ALL=(ALL:ALL) NOPASSWD: ALL
+        cat > "/etc/sudoers.d/amad" << EOF
+        amad ALL=(ALL:ALL) NOPASSWD: ALL
         EOF
   updates: security
   version: 1
