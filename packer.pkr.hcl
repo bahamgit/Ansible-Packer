@@ -66,7 +66,7 @@ source "vsphere-iso" "vm-packer" {
   #   "ip=192.168.220.20::192.168.220.1:255.255.255.0::ubuntu-auto-int:none ",
   #   "<enter>"
   # ]
-  boot                      = "c"
+  # boot                      = "c"
   boot_wait                 = "5s"
   # ssh_username              = "amad"
   # ssh_password              = "$6$oyKhvXCtMZdJXqob$3sbwPb1/QtQVLxa2uT/vaic2qgvZ6G4Ff2lqmb9mec9pYsPrxMscByfxY2MN/x4YWYiQS17Go6CZ8Gmt.ciB6."
