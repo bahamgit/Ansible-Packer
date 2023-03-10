@@ -47,25 +47,7 @@ source "vsphere-iso" "vm-packer" {
     "<enter><wait15s>",
     "<wait>boot<wait><enter>"
   ]  
-  #   boot_command = [
-  #   "<esc><esc><enter>",
-  #   "/install/vmlinuz ",
-  #   "noapic ",
-  #   "preseed/url=http://192.168.220.7/ ",
-  #   "debian-installer=en_US ",
-  #   "auto ",
-  #   "locale=en_US ",
-  #   "kbd-chooser/method=us ",
-  #   "hostname=ubuntu-auto-inst ",
-  #   "fb=false ",
-  #   "debconf/frontend=noninteractive ",
-  #   "keyboard-configuration/modelcode=SKIP ",
-  #   "keyboard-configuration/layout=USA ",
-  #   "keyboard-configuration/variant=USA ",
-  #   "keyboard-configuration/options= ",
-  #   "ip=192.168.220.20::192.168.220.1:255.255.255.0::ubuntu-auto-int:none ",
-  #   "<enter>"
-  # ]
+
   # boot                      = "c"
   boot_wait                 = "5s"
   # ssh_username              = "amad"
@@ -75,35 +57,6 @@ source "vsphere-iso" "vm-packer" {
   ssh_clear_authorized_keys = true
   ssh_port                  = 22
   ssh_certificate_file      = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKTU4LbNRT7d441d9SA5yCzyUnSzveXs+aXUFgVcSN/TJ880HKoINpJGml1IoAIRbRIM5na8OUgNflPungvYHlY= user-ansible@ansible"
-
-# boot_command = [
-#   # Appuyer sur la touche "Entrée" pour commencer le processus de démarrage
-#   "<enter><wait>",
-#   # Spécifier l'adresse IP, le masque de sous-réseau, la passerelle et le DNS à utiliser pour la machine virtuelle
-#   "ip=192.168.220.20",
-#   "netmask=255.255.255.0",
-#   "gateway=192.168.220.1",
-#   "dns=192.168.220.2",
-#   # Spécifier le noyau Linux à utiliser pour l'installation
-#   "/install/vmlinuz",
-#   # Désactiver le support pour l'APIC (Advanced Programmable Interrupt Controller)
-#   "noapic",
-#   # Spécifier l'URL du fichier user-data contenant les informations de configuration
-#   "ds=nocloud-net;s=http://192.168.220.7/",
-#   # Activer l'installation automatique
-#   "auto=true",
-#   # Spécifier la priorité de l'installation
-#   "priority=critical",
-#   # Configurer la langue par défaut en anglais
-#   "debian-installer/locale=en_US",
-#   # Désactiver la détection automatique de la configuration de la console
-#   "console-setup/ask_detect=false",
-#   # Configurer la disposition du clavier pour un clavier français (azerty)
-#   "keyboard-configuration/xkb-keymap=fr",
-#   "console-keymaps-at/keymap=fr",
-#   # Appuyer sur la touche "Entrée" pour lancer l'installation
-#   "<enter><wait>"
-# ]
 
   # Pour la connexion ssh
   ssh_host = "192.168.220.20"
