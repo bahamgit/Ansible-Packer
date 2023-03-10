@@ -17,7 +17,7 @@ autoinstall:
   drivers:
     install: false
   identity:
-    hostname: ubuntu
+    hostname: ubuntu-auto-inst
     password: $6$oyKhvXCtMZdJXqob$3sbwPb1/QtQVLxa2uT/vaic2qgvZ6G4Ff2lqmb9mec9pYsPrxMscByfxY2MN/x4YWYiQS17Go6CZ8Gmt.ciB6.
     realname: Amadou BAH
     username: amad
@@ -28,11 +28,7 @@ autoinstall:
     toggle: null
     variant: ''
   locale: en_US.UTF-8
-  network:
-    ethernets:
-      ens160:
-        dhcp4: true
-    version: 2
+  timezome: Europe/Paris
   ssh:
     allow-pw: true
     authorized-keys: []

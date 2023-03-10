@@ -56,14 +56,14 @@ source "vsphere-iso" "vm-packer" {
     "auto ",
     "locale=en_US ",
     "kbd-chooser/method=us ",
-    "hostname=ubuntu-auto-int ",
+    "hostname=ubuntu-auto-inst ",
     "fb=false ",
     "debconf/frontend=noninteractive ",
     "keyboard-configuration/modelcode=SKIP ",
     "keyboard-configuration/layout=USA ",
     "keyboard-configuration/variant=USA ",
     "keyboard-configuration/options= ",
-    "ip=192.168.220.20::192.168.220.1:255.255.255.0:ubuntu-auto-int:none ",
+    "ip=192.168.220.20::192.168.220.1:255.255.255.0:ubuntu-auto-inst:none ",
     "<enter>"
   ]
 # boot_command = [
