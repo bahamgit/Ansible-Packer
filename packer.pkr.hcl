@@ -15,13 +15,13 @@ source "vsphere-iso" "vm-packer" {
 
   # CPU settings
   CPUs         = "1"
-  # cpu_cores    = "2"
+  # cpu_cores    = "2"  
+  CPU_hot_plug = true
   
   # Memory settings
-  CPU_hot_plug = true
-  RAM          = "4096"
   RAM_hot_plug = true
-  
+  RAM          = "8192"
+
   # Network settings
   network_adapters {
     network = "Amad - DMZ"
@@ -31,7 +31,7 @@ source "vsphere-iso" "vm-packer" {
  # Hard disk settings 
   disk_controller_type = ["pvscsi"]
   storage {
-    disk_size = 50000
+    disk_size = 40960 
     disk_controller_index = 0
   }
 
@@ -56,7 +56,7 @@ source "vsphere-iso" "vm-packer" {
   ssh_timeout               = "20m"
   ssh_clear_authorized_keys = true
   ssh_port                  = 22
-  # ssh_certificate_file      = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKTU4LbNRT7d441d9SA5yCzyUnSzveXs+aXUFgVcSN/TJ880HKoINpJGml1IoAIRbRIM5na8OUgNflPungvYHlY= user-ansible@ansible"
+  ssh_certificate_file      = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKTU4LbNRT7d441d9SA5yCzyUnSzveXs+aXUFgVcSN/TJ880HKoINpJGml1IoAIRbRIM5na8OUgNflPungvYHlY= user-ansible@ansible"
 
   # # Pour la connexion ssh
   # ssh_host = "192.168.220.20"
