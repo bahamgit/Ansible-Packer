@@ -40,7 +40,7 @@ source "vsphere-iso" "vm-packer" {
   iso_url      = "https://releases.ubuntu.com/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
   
   boot_command = [
-    "<wait>c",
+    "<wait10s>c",
     "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/ ---<wait>",
     "<enter><wait10s>",
     "initrd /casper/initrd",
