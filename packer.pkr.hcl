@@ -51,7 +51,7 @@ source "vsphere-iso" "vm-packer" {
     "<esc><esc><enter>",
     "/install/vmlinuz ",
     "noapic ",
-    "preseed/url=http://192.168.220.7/user-data.j2 ",
+    "preseed/url=http://192.168.220.7/ ",
     "debian-installer=en_US ",
     "auto ",
     "locale=en_US ",
