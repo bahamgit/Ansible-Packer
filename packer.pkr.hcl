@@ -50,13 +50,10 @@ source "vsphere-iso" "vm-packer" {
 
   # boot                      = "c"
   boot_wait                 = "5s"
-  # ssh_username              = "amad"
-  # ssh_password              = "$6$oyKhvXCtMZdJXqob$3sbwPb1/QtQVLxa2uT/vaic2qgvZ6G4Ff2lqmb9mec9pYsPrxMscByfxY2MN/x4YWYiQS17Go6CZ8Gmt.ciB6."
   ssh_timeout               = "20m"
-  # ssh_host                  = "192.168.220.20"
   ssh_clear_authorized_keys = true
   ssh_port                  = 22
-  ssh_certificate_file      = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKTU4LbNRT7d441d9SA5yCzyUnSzveXs+aXUFgVcSN/TJ880HKoINpJGml1IoAIRbRIM5na8OUgNflPungvYHlY= user-ansible@ansible"
+  # ssh_certificate_file      = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKTU4LbNRT7d441d9SA5yCzyUnSzveXs+aXUFgVcSN/TJ880HKoINpJGml1IoAIRbRIM5na8OUgNflPungvYHlY= user-ansible@ansible"
 
   # Pour la connexion ssh
   ssh_host = "192.168.220.20"
