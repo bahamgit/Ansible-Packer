@@ -40,11 +40,6 @@ source "vsphere-iso" "vm-packer" {
   iso_url      = "https://releases.ubuntu.com/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
   
   
-#  # VM Cloud-Init Settings
-#  user_data_file = "user_data.j2"
-#  cloud_init              = true
-#  cloud_init_storage_pool = "{{ local }}"
- 
 boot_command = [
   # Appuyer sur la touche "Entrée" pour commencer le processus de démarrage
   "<enter><wait>",
@@ -74,7 +69,6 @@ boot_command = [
   "<enter><wait>"
 ]
 
-
   # Pour la connexion ssh
   ssh_host = "192.168.220.20"
   ssh_username = "amad"
@@ -82,15 +76,8 @@ boot_command = [
 }
 
   # PACKER Boot Commands
-
-# Build Definition to create the VM Template
+  # Build Definition to create the VM Template
 build {
-
   name    = "vm creation"
   sources = ["source.vsphere-iso.vm-packer"]
-
-#   provisioner "file" {
-#     source      = "user-data.j2"    # fichier de configuration cloud-init
-#     destination = "/tmp/user-data.j2"
-#   }
 }
