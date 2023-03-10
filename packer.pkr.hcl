@@ -74,6 +74,7 @@ boot_command = [
   "<enter><wait>"
 ]
 
+
   # Pour la connexion ssh
   ssh_host = "192.168.220.20"
   ssh_username = "amad"
