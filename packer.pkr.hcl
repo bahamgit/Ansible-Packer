@@ -39,14 +39,33 @@ source "vsphere-iso" "vm-packer" {
   iso_checksum = "5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
   iso_url      = "https://releases.ubuntu.com/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
   
-  boot_command = [
-    "<wait>c",
-    "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/ ---<wait>",
-    "<enter><wait10s>",
-    "initrd /casper/initrd",
-    "<enter><wait15s>",
-    "<wait>boot<wait><enter>"
-  ]  
+#   boot_command = [
+#     "<wait>c",
+#     "linux /casper/vmlinuz quiet ip=192.168.220.20::192.168.220.1:255.255.255.0::::192.168.220.2  autoinstall ds=nocloud-net\\;s=http://192.168.220.7/ ---<wait>",
+#     "<enter><wait10s>",
+#     "initrd /casper/initrd",
+#     "<enter><wait15s>",
+#     "<wait>boot<wait><enter>"
+#   ]  
+      boot_command = [
+    "<esc><esc><enter>",
+    "/install/vmlinuz ",
+    "noapic ",
+    "preseed/url=http://192.168.220.7/user-data.j2 ",
+    "debian-installer=en_US ",
+    "auto ",
+    "locale=en_US ",
+    "kbd-chooser/method=us ",
+    "hostname=ubuntu-auto-int ",
+    "fb=false ",
+    "debconf/frontend=noninteractive ",
+    "keyboard-configuration/modelcode=SKIP ",
+    "keyboard-configuration/layout=USA ",
+    "keyboard-configuration/variant=USA ",
+    "keyboard-configuration/options= ",
+    "ip=192.168.220.20::192.168.220.1:255.255.255.0:ubuntu-auto-int:none ",
+    "<enter>"
+  ]
 # boot_command = [
 #   # Appuyer sur la touche "Entrée" pour commencer le processus de démarrage
 #   "<enter><wait>",
