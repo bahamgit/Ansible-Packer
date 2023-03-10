@@ -31,7 +31,7 @@ source "vsphere-iso" "vm-packer" {
  # Hard disk settings 
   disk_controller_type = ["pvscsi"]
   storage {
-    disk_size = 40000
+    disk_size = 50000
     disk_controller_index = 0
   }
 
