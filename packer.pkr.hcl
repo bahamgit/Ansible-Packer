@@ -93,7 +93,4 @@ build {
 #     source      = "user-data.j2"    # fichier de configuration cloud-init
 #     destination = "/tmp/user-data.j2"
 #   }
-
-
 }
-
