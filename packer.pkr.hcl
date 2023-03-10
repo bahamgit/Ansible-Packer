@@ -14,13 +14,13 @@ source "vsphere-iso" "vm-packer" {
   datastore = "STORAGE_Amad"
 
   # CPU settings
-  CPUs         = "1"
-  # cpu_cores    = "2"  
+  CPUs         = "2"
   CPU_hot_plug = true
+  # cpu_cores    = "4"  
   
   # Memory settings
-  RAM_hot_plug = true
   RAM          = "8192"
+  RAM_hot_plug = true
 
   # Network settings
   network_adapters {
