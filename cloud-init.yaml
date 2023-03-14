@@ -8,17 +8,19 @@ autoinstall:
     - arches:
       - amd64
       - i386
-      uri: http://ch.archive.ubuntu.com/ubuntu
+      uri: http://fr.archive.ubuntu.com/ubuntu
     - arches:
       - default
       uri: http://ports.ubuntu.com/ubuntu-ports
+  package_update: true
+  package_upgrade: true
   drivers:
     install: false
   identity:
-    hostname: ubuntu-auto-inst
-    password: $6$oyKhvXCtMZdJXqob$3sbwPb1/QtQVLxa2uT/vaic2qgvZ6G4Ff2lqmb9mec9pYsPrxMscByfxY2MN/x4YWYiQS17Go6CZ8Gmt.ciB6.
-    realname: Amadou BAH
-    username: amad
+    hostname: deb
+    password: $6$x34vQnelZhjJ6PUP$gQ7fNL8GL..Pd7NjntXvBGF6wohbke/Wi1Eh8zhgATxf03HQPUnpN.bhX04eOrqXPE643iKbI7.c08104Z1V50
+    realname: deb
+    username: administrator
   kernel:
     package: linux-generic
   keyboard:
@@ -82,7 +84,7 @@ autoinstall:
       preserve: false
       type: lvm_volgroup
       id: lvm_volgroup-0
-    - name: lv_system
+    - name: lv-system
       volgroup: lvm_volgroup-0
       size: 5368709120B
       wipe: superblock
@@ -98,7 +100,7 @@ autoinstall:
       device: format-1
       type: mount
       id: mount-1
-    - name: lv_swap
+    - name: lv-swap
       volgroup: lvm_volgroup-0
       size: 4294967296B
       wipe: superblock
@@ -114,7 +116,7 @@ autoinstall:
       device: format-2
       type: mount
       id: mount-2
-    - name: lv_var
+    - name: lv-var
       volgroup: lvm_volgroup-0
       size: 5368709120B
       wipe: superblock
@@ -125,12 +127,12 @@ autoinstall:
       volume: lvm_partition-2
       preserve: false
       type: format
-      id: format-4
+      id: format-3
     - path: /var
-      device: format-4
+      device: format-3
       type: mount
-      id: mount-4
-    - name: lv_usr
+      id: mount-3
+    - name: lv-usr
       volgroup: lvm_volgroup-0
       size: 5368709120B
       wipe: superblock
@@ -141,12 +143,12 @@ autoinstall:
       volume: lvm_partition-3
       preserve: false
       type: format
-      id: format-5
+      id: format-4
     - path: /usr
-      device: format-5
+      device: format-4
       type: mount
-      id: mount-5
-    - name: lv_tmp
+      id: mount-4
+    - name: lv-tmp
       volgroup: lvm_volgroup-0
       size: 3221225472B
       wipe: superblock
@@ -157,12 +159,12 @@ autoinstall:
       volume: lvm_partition-4
       preserve: false
       type: format
-      id: format-6
+      id: format-5
     - path: /tmp
-      device: format-6
+      device: format-5
       type: mount
-      id: mount-6
-    - name: lv_opt
+      id: mount-5
+    - name: lv-opt
       volgroup: lvm_volgroup-0
       size: 3221225472B
       wipe: superblock
@@ -173,12 +175,12 @@ autoinstall:
       volume: lvm_partition-5
       preserve: false
       type: format
-      id: format-7
+      id: format-6
     - path: /opt
-      device: format-7
+      device: format-6
       type: mount
-      id: mount-7
-    - name: lv_home
+      id: mount-6
+    - name: lv-home
       volgroup: lvm_volgroup-0
       size: 1073741824B
       wipe: superblock
@@ -189,11 +191,11 @@ autoinstall:
       volume: lvm_partition-6
       preserve: false
       type: format
-      id: format-8
+      id: format-7
     - path: /home
-      device: format-8
+      device: format-7
       type: mount
-      id: mount-8
+      id: mount-7
     - path: /boot
       device: format-0
       type: mount
@@ -336,6 +338,6 @@ autoinstall:
       - updatedb
       - history -c
       - history -w 
-      - sleep 60 && apt purge --auto-remove netplan.io -y  && reboot &   
+      - sleep 60 && apt purge --auto-remove netplan.io -y  && reboot & 
   updates: security
   version: 1
